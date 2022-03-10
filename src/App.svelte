@@ -16,7 +16,7 @@
 
 <nav class="nav-bar">
   <div id="nav-border">
-    <img src="images/portfolio-navbar-edge-custom.svg" alt="funky nav border" />
+    <img src="/images/portfolio-navbar-edge-custom.svg" alt="funky nav border" />
   </div>
 
   <div id="nav-content">
@@ -40,7 +40,7 @@
 <main id="top">
   <div id="bio-wrapper">
     <div id="bio">
-      <img src="images/apes.png" alt="ape" />
+      <img src="/images/apes.png" alt="ape" />
       <h1>Samuel Edge</h1>
       <p>This is some stuff about me</p>
     </div>
@@ -100,7 +100,7 @@
     color: var(--text);
 
     background: var(--bg);
-    background-image: url("./images/pexels-irina-iriser-1083807.jpg");
+    background-image: url("/images/pexels-irina-iriser-1083807.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
