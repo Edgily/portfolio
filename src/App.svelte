@@ -2,6 +2,8 @@
   function scrollTo(e) {
     const href = e.target.closest("a").getAttribute("href").slice(1);
 
+    // history.pushState(state, unused)
+
     if (!href) return;
 
     document.getElementById(href).scrollIntoView({
@@ -14,7 +16,7 @@
 
 <nav class="nav-bar">
   <div id="nav-border">
-    <img src="build/images/portfolio-navbar-edge-custom.svg" alt="" />
+    <img src="images/portfolio-navbar-edge-custom.svg" alt="funky nav border" />
   </div>
 
   <div id="nav-content">
