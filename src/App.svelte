@@ -141,18 +141,19 @@
 
     .nav-first h1 {
       opacity: 0;
+      display: inline;
       animation: var(--transition-speed) fadeIn linear var(--transition-speed)
         forwards;
     }
 
     .nav-link {
-    filter: grayscale(0%);
+      filter: grayscale(0%);
     }
 
     .nav-text {
       display: unset;
-      opacity: 0;
       margin-left: 1rem;
+      opacity: 0;
       animation: var(--transition-speed) fadeIn linear 100ms forwards;
     }
   }
@@ -192,6 +193,8 @@
     h1 {
       margin-left: 1rem;
       font-size: 1.5rem;
+      white-space: nowrap;
+      display: none;
       opacity: 0;
     }
   }
@@ -208,9 +211,9 @@
     margin-top: 0.5rem;
 
     color: var(--highlight);
-    
+
     transition: var(--transition-speed) ease;
-    filter: grayscale(70%);
+    filter: grayscale(80%);
   }
 
   .nav-link:hover {

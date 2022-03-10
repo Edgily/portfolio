@@ -1,0 +1,22 @@
+<svg id="visual" width="20.999" height="600" version="1.1" viewBox="0 0 20.999 600" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <clipPath id="clipPath4616">
+   <rect x="5.5388" y="-3.5191" width="97.396" height="608.34" fill="none" stroke="#094961" stroke-width="1.9961" style="paint-order:markers fill stroke"/>
+  </clipPath>
+  <clipPath id="clipPath4620">
+   <rect x="5.5388" y="-3.5191" width="97.396" height="608.34" fill="none" stroke="#094961" stroke-width="1.9961" style="paint-order:markers fill stroke"/>
+  </clipPath>
+  <clipPath id="clipPath4624">
+   <rect x="5.5388" y="-3.5191" width="97.396" height="608.34" fill="none" stroke="#094961" stroke-width="1.9961" style="paint-order:markers fill stroke"/>
+  </clipPath>
+  <clipPath id="clipPath4628">
+   <rect x="5.5388" y="-3.5191" width="97.396" height="608.34" fill="none" stroke="#094961" stroke-width="1.9961" style="paint-order:markers fill stroke"/>
+  </clipPath>
+ </defs>
+ <g>
+  <path transform="translate(-5.5388)" d="m22.339 0h-0.38172v26h1.5269v26h-2.672v26h1.5269v26h1.5269v26h2.672v27h-2.672v26h-1.5269v26h3.0538v26h-2.2903v26h1.9086v26h0.76344v26h-5.7258v26h3.4355v78h0.38172v26h1.1452v27h-4.5806v26h4.5806v26h-3.8172v26h0.76343v26h2.672v26h-19.086v-600z" clip-path="url(#clipPath4628)" fill="#02acc5" stroke-width=".61783"/>
+  <path transform="translate(-5.5388)" d="m18.774 3.74e-6h-0.33339v26h1.3335v26h-2.3337v26h1.3335v26h1.3335v26h2.3337v27h-2.3337v26h-1.3335v26h2.6671v26h-2.0003v26h1.6669v26h0.66677v26h-5.0008v26h3.0005v78h0.33339v26h1.0002v27h-4.0006v26h4.0006v26h-3.3339v26h0.66677v26h2.3337v26h-16.669v-600z" clip-path="url(#clipPath4624)" fill="#d2186e" stroke-width=".5774"/>
+  <path transform="translate(-5.5388)" d="m13.748 3.56e-6h-0.51304v26h-0.51304v52h-0.51304v26h3.0783v26h-2.5652v27h0.51304v26h1.0261v26h-0.51304v26h0.51304v26h-0.51304v26h-0.51304v26h1.5391v26h-1.5391v26h0.51304v26h0.51304v26h-1.5391v53h1.5391v26h-1.5391v26h2.5652v26h0.51304v26h-1.0261v26h-10.774v-600z" clip-path="url(#clipPath4620)" fill="#094961" style="paint-order:markers fill stroke"/>
+ </g>
+ <path transform="translate(-5.5388)" d="m9.7478 3.74e-6h-0.51304v26h-0.51304v52h-0.51305v26h3.0783v26h-2.5652v27h0.51304v26h1.0261v26h-0.51304v26h0.51304v26h-0.51304v26h-0.51304v26h1.5391v26h-1.5391v26h0.51304v26h0.51304v26h-1.5391v53h1.5391v26h-1.5391v26h2.5652v26h0.51304v26h-1.0261v26h-10.774v-600z" clip-path="url(#clipPath4616)" fill="#1f0512" style="paint-order:markers fill stroke"/>
+</svg>
