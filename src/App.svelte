@@ -40,7 +40,7 @@
 <main id="top">
   <div id="bio-wrapper">
     <div id="bio">
-      <img src="build/images/apes.png" alt="ape" />
+      <img src="images/apes.png" alt="ape" />
       <h1>Samuel Edge</h1>
       <p>This is some stuff about me</p>
     </div>
