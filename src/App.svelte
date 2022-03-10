@@ -100,7 +100,7 @@
     color: var(--text);
 
     background: var(--bg);
-    background-image: url("../images/pexels-irina-iriser-1083807.jpg");
+    background-image: url("./images/pexels-irina-iriser-1083807.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
