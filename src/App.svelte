@@ -98,7 +98,7 @@
     color: var(--text);
 
     background: var(--bg);
-    background-image: url("./images/pexels-irina-iriser-1083807.jpg");
+    background-image: url("images/pexels-irina-iriser-1083807.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -140,7 +140,6 @@
     }
 
     .nav-first h1 {
-      display: unset;
       opacity: 0;
       animation: var(--transition-speed) fadeIn linear var(--transition-speed)
         forwards;
@@ -188,11 +187,12 @@
     color: var(--highlight);
     display: flex;
     align-items: center;
+    overflow: hidden;
 
     h1 {
       margin-left: 1rem;
       font-size: 1.5rem;
-      display: none;
+      opacity: 0;
     }
   }
 
