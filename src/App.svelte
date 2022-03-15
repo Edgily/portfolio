@@ -1,54 +1,53 @@
 <script lang="ts">
-  function scrollTo(e) {
-    const href = e.target.closest("a").getAttribute("href").slice(1);
+  import Navbar from "./components/Navbar.svelte";
 
-    // history.pushState(state, unused)
-
-    if (!href) return;
-
-    document.getElementById(href).scrollIntoView({
-      behavior: "smooth",
-    });
-  }
-
-  history.scrollRestoration = "manual";
+  // history.scrollRestoration = "manual";
 </script>
 
-<nav class="nav-bar">
-  <div id="nav-border">
-    <img src="/images/portfolio-navbar-edge-custom.svg" alt="funky nav border" />
-  </div>
+<section id="bg-container" />
 
-  <div id="nav-content">
-    <span class="nav-first">
-      <span class="material-icons-round menu-icon"> menu_open </span>
-      <h1>S. Edge</h1>
-    </span>
-
-    <a href="#top" on:click|preventDefault={scrollTo} class="nav-link">
-      <span class="material-icons-round nav-icon"> contact_page </span>
-      <span class="nav-text">Bio</span>
-    </a>
-
-    <a href="#content" on:click|preventDefault={scrollTo} class="nav-link">
-      <span class="material-icons-round nav-icon"> task </span>
-      <span class="nav-text">Projects</span>
-    </a>
-  </div>
-</nav>
+<Navbar />
 
 <main id="top">
-  <div id="bio-wrapper">
-    <div id="bio">
-      <img src="/images/apes.png" alt="ape" />
-      <h1>Samuel Edge</h1>
-      <p>This is some stuff about me</p>
+  <section id="bio">
+    <div class="link-wrapper">
+      <button
+        class="button"
+        on:click={() => window.open("https://www.linkedin.com/in/edgily")}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          ><path
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+          /></svg
+        >
+      </button>
+      <button
+        class="button"
+        on:click={() => window.open("https://github.com/Edgily")}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40px"
+          height="40px"
+          viewBox="0 0 24 24"
+          ><path
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-4.466 19.59c-.405.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.312-1.588-.823-2.147.082-.202.356-1.016-.079-2.117 0 0-.671-.215-2.198.82-.64-.18-1.324-.267-2.004-.271-.68.003-1.364.091-2.003.269-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118-.512.56-.824 1.273-.824 2.147 0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385-3.18-1.057-5.472-4.056-5.472-7.59 0-4.419 3.582-8 8-8s8 3.581 8 8c0 3.533-2.289 6.531-5.466 7.59z"
+          /></svg
+        >
+      </button>
     </div>
-  </div>
+    <div id="bar" />
+    <h1>Samuel Edge</h1>
+    <div id="bar" />
+    <p>Junior Software Developer</p>
+  </section>
 
-  <div id="content">
+  <section id="content" class="content">
     <h1>This is a title</h1>
-    <!--  -->
     <p>
       I was part of something special. God creates dinosaurs. God destroys
       dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs. I was
@@ -71,7 +70,7 @@
       told me, laugh and the world laughs with you, Cry, and I'll give you
       something to cry about you little bastard!
     </p>
-  </div>
+  </section>
 </main>
 
 <style lang="scss">
@@ -90,7 +89,6 @@
     --bg2-trans: rgb(9, 73, 97, 0.7);
     --highlight: #02acc5;
     --highlight2: #d2186e;
-    --transition-speed: 500ms;
   }
 
   :global(body) {
@@ -98,12 +96,6 @@
     padding: 0;
 
     color: var(--text);
-
-    background: var(--bg);
-    background-image: url("/images/pexels-irina-iriser-1083807.jpg");
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
   }
 
   :global(body::-webkit-scrollbar) {
@@ -118,173 +110,228 @@
     background: var(--highlight);
   }
 
+  :global(.button) {
+    --button-font: 2.5rem;
+    color: var(--bg);
+    background-color: var(--highlight);
+    border: 0;
+    border-radius: 0.3rem;
+    width: 3rem;
+    height: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: var(--button-font);
+
+    &:hover {
+      background-color: var(--highlight2);
+      animation: spin 600ms ease-in-out;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      33% {
+        transform: rotate(10deg);
+      }
+
+      66% {
+        transform: rotate(-10deg);
+      }
+
+      to {
+        transform: rotate(0deg);
+      }
+    }
+
+    svg {
+      fill: var(--bg);
+    }
+  }
+
   main {
-    margin-left: 3rem;
-    padding: 2rem;
-  }
-
-  .nav-bar {
-    position: fixed;
-    padding: 0.2rem;
-    width: 2.5rem;
-    height: 100%;
-    background-color: var(--bg);
-
-    transition: width var(--transition-speed) ease;
-    z-index: 1;
-  }
-
-  .nav-bar:hover {
-    width: 10rem;
-
-    #nav-border {
-      margin-left: 10rem;
-    }
-
-    .nav-first h1 {
-      opacity: 0;
-      display: inline;
-      animation: var(--transition-speed) fadeIn linear var(--transition-speed)
-        forwards;
-    }
-
-    .nav-link {
-      filter: grayscale(0%);
-    }
-
-    .nav-text {
-      display: unset;
-      margin-left: 1rem;
-      opacity: 0;
-      animation: var(--transition-speed) fadeIn linear 100ms forwards;
-    }
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  #nav-border {
-    padding: 0;
-    margin: 0;
     position: absolute;
     top: 0;
-    width: 1rem;
-    height: 100vh;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-width: 360px;
+    // background-color: blue;
+  }
+
+  #bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg);
+    background-image: url("/images/pexels-irina-iriser-1083807.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     z-index: -1;
-    margin-left: 2.5rem;
-    transition: margin-left var(--transition-speed) ease;
+
+    animation: flashy 10s linear infinite alternate;
   }
 
-  #nav-border img {
-    height: 100vh;
-  }
-
-  .nav-first {
-    border-bottom: 1px solid var(--highlight2);
-    color: var(--highlight);
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-
-    h1 {
-      margin-left: 1rem;
-      font-size: 1.5rem;
-      white-space: nowrap;
-      display: none;
-      opacity: 0;
+  @keyframes flashy {
+    0% {
+      filter: contrast(100%);
+      filter: brightness(100%);
     }
-  }
 
-  .nav-link {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: start;
-    align-items: center;
+    8% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
+    10% {
+      filter: contrast(130%);
+      filter: brightness(130%);
+    }
+    12% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
 
-    text-decoration: none;
+    20% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
+    21% {
+      filter: contrast(130%);
+      filter: brightness(130%);
+    }
+    23% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
+    24% {
+      filter: contrast(130%);
+      filter: brightness(130%);
+    }
+    25% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
 
-    margin-top: 0.5rem;
+    35% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
+    37% {
+      filter: contrast(130%);
+      filter: brightness(130%);
+    }
+    39% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
 
-    color: var(--highlight);
+    50% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
+    51% {
+      filter: contrast(130%);
+      filter: brightness(130%);
+    }
+    52% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
 
-    transition: var(--transition-speed) ease;
-    filter: grayscale(80%);
-  }
+    70% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
+    71% {
+      filter: contrast(130%);
+      filter: brightness(130%);
+    }
+    72% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
+    74% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
+    76% {
+      filter: contrast(130%);
+      filter: brightness(130%);
+    }
+    78% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
 
-  .nav-link:hover {
-    text-decoration: none;
-
-    color: var(--highlight2);
-  }
-
-  .nav-text {
-    display: none;
-  }
-
-  .material-icons-round.menu-icon {
-    font-size: 2.5rem;
-    transition: transform var(--transition-speed) ease;
-  }
-
-  .nav-bar:hover .material-icons-round.menu-icon {
-    font-size: 2.5rem;
-    transform: rotate(-180deg);
-  }
-
-  .material-icons-round.nav-icon {
-    font-size: 2.5rem;
+    100% {
+      filter: contrast(100%);
+      filter: brightness(100%);
+    }
   }
 
   #bio {
+    margin: 0;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 30vh;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: min-content;
-    height: min-content;
-    margin: auto;
     text-align: center;
+    gap: 3rem;
 
-    background: var(--bg2-trans);
-    padding: 2rem;
-    border-radius: 2rem;
+    font-size: 1.5rem;
+    text-shadow: 0rem 0rem 0.5rem var(--highlight);
 
+    opacity: 0;
     animation: intro 1.5s ease-in-out 1 forwards;
     animation-delay: 0.5s;
-    opacity: 0;
-  }
 
-  @keyframes intro {
-    from {
-      transform: translateY(-6rem);
+    @keyframes intro {
+      from {
+        transform: translateY(-6rem);
+      }
+
+      50% {
+        transform: translateY(2rem);
+      }
+
+      to {
+        transform: initial;
+        opacity: 1;
+      }
     }
 
-    50% {
-      transform: translateY(2rem);
+    #bar {
+      width: 100%;
+      height: 2px;
+      background-color: var(--text);
+      box-shadow: 0rem 0rem 0.5rem var(--highlight);
     }
 
-    to {
-      transform: initial;
-      opacity: 1;
+    .link-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
     }
   }
 
-  #bio img {
-    width: 200px;
-    border-radius: 50%;
-    border: 0.2rem solid var(--highlight);
-    box-shadow: 0 0 2rem var(--highlight2);
-  }
-
-  #content {
-    margin-top: 100vh;
-    height: 100vh;
+  .content {
+    position: absolute;
+    top: 100vh;
+    padding: 5rem;
+    background-color: var(--bg);
   }
 </style>
