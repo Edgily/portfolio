@@ -9,7 +9,7 @@
 <Navbar />
 
 <main id="top">
-  <section id="bio">
+  <section id="me">
     <div class="link-wrapper">
       <button
         class="button"
@@ -46,30 +46,49 @@
     <p>Junior Software Developer</p>
   </section>
 
-  <section id="content" class="content">
-    <h1>This is a title</h1>
-    <p>
-      I was part of something special. God creates dinosaurs. God destroys
-      dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs. I was
-      part of something special. Hey, you know how I'm, like, always trying to
-      save the planet? Here's my chance. Must go faster. Forget the fat lady!
-      You're obsessed with the fat lady! Drive us out of here! This thing comes
-      fully loaded. AM/FM radio, reclining bucket seats, and... power windows.
-      You know what? It is beets. I've crashed into a beet truck. Is this my
-      espresso machine? Wh-what is-h-how did you get my espresso machine? You
-      really think you can fly that thing? Forget the fat lady! You're obsessed
-      with the fat lady! Drive us out of here! Jaguar shark! So tell me - does
-      it really exist? Did he just throw my cat out of the window? God help us,
-      we're in the hands of engineers. This thing comes fully loaded. AM/FM
-      radio, reclining bucket seats, and... power windows. Hey, take a look at
-      the earthlings. Goodbye! Do you have any idea how long it takes those cups
-      to decompose. You're a very talented young man, with your own clever
-      thoughts and ideas. Do you need a manager? So you two dig up, dig up
-      dinosaurs? My dad once told me, laugh and the world laughs with you, Cry,
-      and I'll give you something to cry about you little bastard! My dad once
-      told me, laugh and the world laughs with you, Cry, and I'll give you
-      something to cry about you little bastard!
-    </p>
+  <section id="content">
+    <div class="title">
+      <h1>About Me</h1>
+    </div>
+
+    <div class="content">
+      <p>
+        I was part of something special. God creates dinosaurs. God destroys
+        dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs. I
+        was part of something special. Hey, you know how I'm, like, always
+        trying to save the planet? Here's my chance. Must go faster. Forget the
+      </p>
+    </div>
+
+    <div class="title">
+      <h1>Projects</h1>
+    </div>
+
+    <div class="content">
+      <p>
+        I was part of something special. God creates dinosaurs. God destroys
+        dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs. I
+        was part of something special. Hey, you know how I'm, like, always
+        trying to save the planet? Here's my chance. Must go faster. Forget the
+        fat lady! You're obsessed with the fat lady! Drive us out of here! This
+        thing comes fully loaded. AM/FM radio, reclining bucket seats, and...
+        power windows. You know what? It is beets. I've crashed into a beet
+        truck. Is this my espresso machine? Wh-what is-h-how did you get my
+        espresso machine? You really think you can fly that thing? Forget the
+        fat lady! You're obsessed with the fat lady! Drive us out of here!
+        Jaguar shark! So tell me - does it really exist? Did he just throw my
+        cat out of the window? God help us, we're in the hands of engineers.
+        This thing comes fully loaded. AM/FM radio, reclining bucket seats,
+        and... power windows. Hey, take a look at the earthlings. Goodbye! Do
+        you have any idea how long it takes those cups to decompose. You're a
+        very talented young man, with your own clever thoughts and ideas. Do you
+        need a manager? So you two dig up, dig up dinosaurs? My dad once told
+        me, laugh and the world laughs with you, Cry, and I'll give you
+        something to cry about you little bastard! My dad once told me, laugh
+        and the world laughs with you, Cry, and I'll give you something to cry
+        about you little bastard!
+      </p>
+    </div>
   </section>
 </main>
 
@@ -177,107 +196,117 @@
     background-attachment: fixed;
     z-index: -1;
 
-    animation: flashy 10s linear infinite alternate;
+    animation: gradual 5s ease-in-out 1 forwards;
+
+    @keyframes gradual {
+      from {
+        filter: grayscale(100%);
+      }
+
+      to {
+        filter: grayscale(0%);
+      }
+    }
+
+    @keyframes flashy {
+      0% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+
+      8% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+      10% {
+        filter: contrast(90%);
+        filter: brightness(90%);
+      }
+      12% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+
+      20% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+      21% {
+        filter: contrast(110%);
+        filter: brightness(110%);
+      }
+      23% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+      24% {
+        filter: contrast(110%);
+        filter: brightness(110%);
+      }
+      25% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+
+      35% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+      37% {
+        filter: contrast(90%);
+        filter: brightness(90%);
+      }
+      39% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+
+      50% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+      51% {
+        filter: contrast(110%);
+        filter: brightness(110%);
+      }
+      52% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+
+      70% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+      71% {
+        filter: contrast(90%);
+        filter: brightness(90%);
+      }
+      72% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+      74% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+      76% {
+        filter: contrast(90%);
+        filter: brightness(90%);
+      }
+      78% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+
+      100% {
+        filter: contrast(100%);
+        filter: brightness(100%);
+      }
+    }
   }
 
-  @keyframes flashy {
-    0% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-
-    8% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-    10% {
-      filter: contrast(130%);
-      filter: brightness(130%);
-    }
-    12% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-
-    20% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-    21% {
-      filter: contrast(130%);
-      filter: brightness(130%);
-    }
-    23% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-    24% {
-      filter: contrast(130%);
-      filter: brightness(130%);
-    }
-    25% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-
-    35% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-    37% {
-      filter: contrast(130%);
-      filter: brightness(130%);
-    }
-    39% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-
-    50% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-    51% {
-      filter: contrast(130%);
-      filter: brightness(130%);
-    }
-    52% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-
-    70% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-    71% {
-      filter: contrast(130%);
-      filter: brightness(130%);
-    }
-    72% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-    74% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-    76% {
-      filter: contrast(130%);
-      filter: brightness(130%);
-    }
-    78% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-
-    100% {
-      filter: contrast(100%);
-      filter: brightness(100%);
-    }
-  }
-
-  #bio {
+  #me {
     margin: 0;
     margin-left: 5rem;
     margin-right: 5rem;
@@ -328,10 +357,22 @@
     }
   }
 
-  .content {
+  #content {
     position: absolute;
     top: 100vh;
-    padding: 5rem;
+  }
+
+  .title {
+    padding: 2rem;
+
+    display: flex;
+    justify-content: center;
+
+    font-size: 1.5rem;
+    text-shadow: 0rem 0rem 0.5rem var(--highlight);
+  }
+  .content {
+    padding: 1rem;
     background-color: var(--bg);
   }
 </style>

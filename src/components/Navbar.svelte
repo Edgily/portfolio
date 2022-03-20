@@ -4,8 +4,6 @@
 
     const href = e.target.closest("a").getAttribute("href").slice(1);
 
-    // history.pushState(state, unused)
-
     if (!href) return;
 
     document.getElementById(href).scrollIntoView({
@@ -42,7 +40,7 @@
       close
     </button>
     <a href="#top" on:click|preventDefault={scrollTo} class="nav-link">
-      <span class="nav-text">Bio</span>
+      <span class="nav-text">Samuel Edge</span>
     </a>
 
     <a href="#content" on:click|preventDefault={scrollTo} class="nav-link">
@@ -80,9 +78,11 @@
 
     font-size: 2rem;
 
+    --transition: 300ms;
+
     &.show {
       display: flex;
-      animation: showMenu 500ms ease-out forwards;
+      animation: showMenu var(--transition) ease-out forwards;
 
       @keyframes showMenu {
         to {
@@ -96,7 +96,7 @@
       display: flex;
       left: 0;
       opacity: 100%;
-      animation: hideMenu 500ms ease-out forwards;
+      animation: hideMenu var(--transition) ease-out forwards;
 
       @keyframes hideMenu {
         to {
