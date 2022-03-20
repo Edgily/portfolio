@@ -1,4 +1,4 @@
-# <a href="edgily.netlify.app">Portfolio</a>
+# <a href="https://edgily.netlify.app">Portfolio</a>
 
 - https://edgily.netlify.app
 
