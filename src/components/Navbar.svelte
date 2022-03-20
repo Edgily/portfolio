@@ -1,17 +1,5 @@
 <script lang="ts">
-  function scrollTo(e) {
-    manageDropdown();
-
-    const href = e.target.closest("a").getAttribute("href").slice(1);
-
-    // history.pushState(state, unused)
-
-    if (!href) return;
-
-    document.getElementById(href).scrollIntoView({
-      behavior: "smooth",
-    });
-  }
+  import { scrollTo } from "../utils/scrollTo";
 
   let dropdownToggle = "";
 
@@ -20,6 +8,9 @@
       ? (dropdownToggle = "show")
       : (dropdownToggle = "hide");
   }
+
+  const menuItems = [['#top', 'Samuel Edge'], ['#projects', 'Projects']];
+
 </script>
 
 <nav>
@@ -41,11 +32,38 @@
     >
       close
     </button>
-    <a href="#top" on:click|preventDefault={scrollTo} class="nav-link">
+
+    {menuItems.forEach((item) => {
+      const href = item[0];
+      const itemName = item[1];
+      console.log(href, itemName);
+
+      // const link = <a href={href}>{itemName}</a>;
+      
+      // return link;
+      // return <a href={href}>{itemName}</a>
+    })}
+
+    <hr style="width: 100%" />
+    <a
+      href="#top"
+      on:click|preventDefault={(e) => {
+        scrollTo(e);
+        manageDropdown();
+      }}
+      class="nav-link"
+    >
       <span class="nav-text">Bio</span>
     </a>
 
-    <a href="#content" on:click|preventDefault={scrollTo} class="nav-link">
+    <a
+      href="#content"
+      on:click|preventDefault={(e) => {
+        scrollTo(e);
+        manageDropdown();
+      }}
+      class="nav-link"
+    >
       <span class="nav-text">Projects</span>
     </a>
   </div>
@@ -82,7 +100,7 @@
 
     &.show {
       display: flex;
-      animation: showMenu 500ms ease-out forwards;
+      animation: showMenu 300ms ease-out forwards;
 
       @keyframes showMenu {
         to {
@@ -96,7 +114,7 @@
       display: flex;
       left: 0;
       opacity: 100%;
-      animation: hideMenu 500ms ease-out forwards;
+      animation: hideMenu 300ms ease-out forwards;
 
       @keyframes hideMenu {
         to {

@@ -1,5 +1,6 @@
 <script lang="ts">
   import Navbar from "./components/Navbar.svelte";
+  import Scrolldown from "./components/Scrolldown.svelte"
 
   // history.scrollRestoration = "manual";
 </script>
@@ -7,6 +8,8 @@
 <section id="bg-container" />
 
 <Navbar />
+
+<Scrolldown />
 
 <main id="top">
   <section id="bio">
@@ -92,8 +95,13 @@
   }
 
   :global(body) {
+    position: relative;
     margin: 0;
     padding: 0;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
 
     color: var(--text);
   }
