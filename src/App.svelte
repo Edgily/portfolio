@@ -1,11 +1,12 @@
 <script lang="ts">
   import Navbar from "./components/Navbar.svelte";
-  import Scrolldown from "./components/Scrolldown.svelte"
+  import Scrolldown from "./components/Scrolldown.svelte";
 
   // history.scrollRestoration = "manual";
 </script>
 
 <section id="bg-container" />
+<section id="bg-container2" />
 
 <Navbar />
 
@@ -118,7 +119,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    
+
     display: flex;
     justify-content: center;
 
@@ -195,24 +196,49 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: var(--bg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -2;
+  }
+
+  #bg-container2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background-image: url("/images/pexels-irina-iriser-1083807.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     z-index: -1;
 
-    animation: gradual 5s ease-in-out 1 forwards;
+    // animation properties ->
+
+    // animation: 
+    // stretch <- name of animation with keyframes
+    // 1.5s <- duration
+    // ease-out <- timing function
+    // 0s <- delay
+    // alternate <- direction 
+    // infinite <- iteration count
+    // none <- fill mode
+    // running <- play state;
+
+    animation: gradual 5s ease-in-out forwards 1,
+      flashy 10s ease-in-out 5s alternate infinite none running;
 
     @keyframes gradual {
       from {
-        filter: grayscale(100%);
+        filter: opacity(0%);
       }
 
       to {
-        filter: grayscale(0%);
+        filter: opacity(100%);
       }
     }
 
@@ -313,7 +339,6 @@
       }
     }
   }
-
   #me {
     margin: 0;
     margin-left: 5rem;
