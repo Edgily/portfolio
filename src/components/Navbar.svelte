@@ -8,9 +8,6 @@
       ? (dropdownToggle = "show")
       : (dropdownToggle = "hide");
   }
-
-  const menuItems = [['#top', 'Samuel Edge'], ['#projects', 'Projects']];
-
 </script>
 
 <nav>
@@ -33,18 +30,6 @@
       close
     </button>
 
-    {menuItems.forEach((item) => {
-      const href = item[0];
-      const itemName = item[1];
-      console.log(href, itemName);
-
-      // const link = <a href={href}>{itemName}</a>;
-      
-      // return link;
-      // return <a href={href}>{itemName}</a>
-    })}
-
-    <hr style="width: 100%" />
     <a
       href="#top"
       on:click|preventDefault={(e) => {
@@ -53,7 +38,7 @@
       }}
       class="nav-link"
     >
-      <span class="nav-text">Bio</span>
+      <span class="nav-text">Samuel Edge</span>
     </a>
 
     <a
@@ -64,7 +49,7 @@
       }}
       class="nav-link"
     >
-      <span class="nav-text">Projects</span>
+      <span class="nav-text">About Me</span>
     </a>
   </div>
 </nav>
@@ -98,9 +83,11 @@
 
     font-size: 2rem;
 
+    --transition: 300ms;
+
     &.show {
       display: flex;
-      animation: showMenu 300ms ease-out forwards;
+      animation: showMenu var(--transition) ease-out forwards;
 
       @keyframes showMenu {
         to {
@@ -114,7 +101,7 @@
       display: flex;
       left: 0;
       opacity: 100%;
-      animation: hideMenu 300ms ease-out forwards;
+      animation: hideMenu var(--transition) ease-out forwards;
 
       @keyframes hideMenu {
         to {
