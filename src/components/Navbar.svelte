@@ -1,15 +1,5 @@
 <script lang="ts">
-  function scrollTo(e) {
-    manageDropdown();
-
-    const href = e.target.closest("a").getAttribute("href").slice(1);
-
-    if (!href) return;
-
-    document.getElementById(href).scrollIntoView({
-      behavior: "smooth",
-    });
-  }
+  import { scrollTo } from "../utils/scrollTo";
 
   let dropdownToggle = "";
 
@@ -39,12 +29,27 @@
     >
       close
     </button>
-    <a href="#top" on:click|preventDefault={scrollTo} class="nav-link">
+
+    <a
+      href="#top"
+      on:click|preventDefault={(e) => {
+        scrollTo(e);
+        manageDropdown();
+      }}
+      class="nav-link"
+    >
       <span class="nav-text">Samuel Edge</span>
     </a>
 
-    <a href="#content" on:click|preventDefault={scrollTo} class="nav-link">
-      <span class="nav-text">Projects</span>
+    <a
+      href="#content"
+      on:click|preventDefault={(e) => {
+        scrollTo(e);
+        manageDropdown();
+      }}
+      class="nav-link"
+    >
+      <span class="nav-text">About Me</span>
     </a>
   </div>
 </nav>
